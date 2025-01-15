@@ -1,0 +1,18 @@
+.tab {
+    display: inline-block;
+    margin-left: 80px;
+}
+
+.tab2 {
+    display: inline-block;
+    margin-left: 52px;
+}
+
+.tab3 {
+    display: inline-block;
+    margin-left: 110px;
+}
+
+.optionList {
+    list-style: none;
+}

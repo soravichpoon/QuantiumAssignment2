@@ -1,0 +1,27 @@
+functions:
+    1. User can vote the topic.
+    2. User can select only one option to vote.
+    3. User can see the detail of the vote topic.
+    4. User can see the vote report.
+    5. User can create the vote.
+
+Components:
+    1. home:
+        - list of the vote topics.
+        - button of vote, report, and Pagination.
+    2. vote:
+        - button to show the vote topic detail.
+        - list of the options.
+        - button to vote for each option.
+        - button to submit the vote.
+    3.  vote-detail:
+        - Contains the vote topic detail.
+    4.  vote-report:
+        - button to show the vote topic detail.
+        - list of the options's result.
+    5.  create-vote:
+        - textbox for inputting the topic.
+        - textbox for inputting the description.
+        - textbox for inputting the option.
+        - button to add more option.
+        - button to create the vote. 

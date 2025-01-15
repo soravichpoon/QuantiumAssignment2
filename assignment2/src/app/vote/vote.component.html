@@ -1,0 +1,27 @@
+<button class="btn btn-primary" (click)="dialog.showModal()">Vote</button>
+
+<dialog #dialog>
+    <div>
+        <b>Submit Vote</b><br><br>
+        Vote {{vote.topicName}}
+        <span class="tab">
+            <app-detail
+            [topic]="vote"
+            ></app-detail>
+        </span><br><br>
+        <tr class="optionList" *ngFor="let item of option" >
+            <p *ngIf="vote.voteDetailID == item.voteDetailID;">
+                {{item.optionDetail}}
+                <span class="tab2">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" (click)="chooseVote(item)" [ngModel]="item.optionIsVote">
+                    </div>
+                </span>
+            </p>
+        </tr>
+            
+    </div><br>
+    <div class="submit">
+      <button class="btn btn-primary" (click)="submit()">Submit</button>
+    </div>
+</dialog>

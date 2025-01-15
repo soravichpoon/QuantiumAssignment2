@@ -1,0 +1,31 @@
+<button class="btn btn-primary" (click)="dialog.showModal()">Report</button>
+
+<dialog #dialog>
+    <div>
+        <b>Vote report</b>
+        <!-- {{option | json}} -->
+        <span class="tab">
+            <button class="btn btn-light" (click)="dialog.close()">X</button>
+        </span><br><br>
+
+        Vote {{vote.topicName}}
+        <span class="tab2">
+            <app-detail
+            [topic]="vote"
+            ></app-detail>
+        </span><br><br>
+
+        <div>
+            # Voter: {{calTotal(option)}}
+        </div><br>
+
+        <li *ngFor="let item of option" class="optionList">
+            <p *ngIf="vote.voteDetailID == item.voteDetailID;">
+                {{item.optionDetail}}
+                <span class="tab3">
+                    {{item.optionScore}}
+                </span>
+            </p>
+        </li>
+    </div>
+</dialog>

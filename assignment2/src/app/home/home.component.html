@@ -1,0 +1,25 @@
+<div *ngIf="voteTopicList.length == 0; else hasVote">
+    There's no vote now.
+</div>
+
+<ng-template #hasVote>
+    <table class="ms-4">
+        <tr *ngFor="let vote of voteTopicList">
+            <td>
+                {{vote.topicName}}
+            </td><br>
+            <td class="voteTable">
+                <app-vote
+                [vote]="vote"
+                [option]="optionDetailList"
+                (newVoteEvent)="updateOption($event)"
+                ></app-vote>
+                <app-report
+                [vote]="vote"
+                [option]="optionDetailList"
+                ></app-report>
+            </td>
+        </tr>
+    </table>
+
+</ng-template>

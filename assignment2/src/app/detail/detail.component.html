@@ -1,0 +1,11 @@
+<button class="btn btn-outline-primary" (click)="dialog.showModal()">detail</button>
+
+<dialog #dialog>
+    <div>
+        Vote {{topic.topicName}}
+        <span class="tab">
+            <button class="btn btn-light" (click)="dialog.close()">X</button>
+        </span><br><br>
+        <p>{{topic.topicDetail}}</p>
+    </div>
+</dialog>

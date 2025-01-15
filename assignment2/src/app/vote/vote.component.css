@@ -1,0 +1,17 @@
+.tab {
+    display: inline-block;
+    margin-left: 52px;
+}
+
+.tab2 {
+    display: inline-block;
+    margin-left: 79px;
+}
+
+.submit {
+    padding-left: 125px;
+}
+
+.optionList {
+    list-style: none;
+}

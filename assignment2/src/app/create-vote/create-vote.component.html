@@ -1,0 +1,24 @@
+<div class="container my-4">
+    <h4>Add Employee</h4>
+    <!-- <form (submit)="$event.preventDefault(); addVote()"> -->
+      <div>
+        <label>Topic</label><br>
+        <input type="text" size="50" [(ngModel)]="newVote.topicName" name="name" required>
+      </div><br>
+      <div>
+        <label>Description</label><br>
+        <input type="text" size="50" style="height:100px" [(ngModel)]="newVote.topicDescription" name="description" required>
+      </div>
+
+      <div *ngFor="let option of optionDetail; let i = index">
+        <label>Option {{i+1}}</label><br>
+        <input type="text" size="50" [(ngModel)]="option.detail" name="option" required><br>
+      </div><br>
+
+      <div>
+        <button class="btn btn-outline-primary btn-sm" (click)="moreOption()">+</button>
+      </div><br>
+      <button type="submit" class="btn btn-primary" (click)="addVote()">Create Vote</button>
+    <!-- </form> -->
+</div>
+  

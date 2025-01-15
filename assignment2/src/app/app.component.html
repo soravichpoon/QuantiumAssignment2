@@ -1,0 +1,24 @@
+<div class="home">
+  <button class="btn btn-light" (click)="pageChange('home')">Home</button>
+  <button class="btn btn-light" (click)="pageChange('create')">Create Vote</button>
+</div><br>
+
+<div *ngIf="page == 'home'; else createVote">
+  <div>
+    <label class="ms-4">/Home</label>
+  </div><br>
+  <app-home
+  [voteTopicList]="votes"
+  [optionDetailList]="options"
+  (updateScoreEvent)="updateScore($event)"
+  ></app-home>
+</div><br>
+
+<ng-template #createVote>
+  <div>
+    <label class="ms-4">/Create vote</label>
+  </div><br>
+  <app-create-vote
+  (addVoteEvent)="addVote($event)"
+  ></app-create-vote>
+</ng-template>
