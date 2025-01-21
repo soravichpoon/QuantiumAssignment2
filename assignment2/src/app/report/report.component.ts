@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-report',
@@ -13,11 +12,10 @@ export class ReportComponent {
   calTotal(option: any): number{
     var totalVote = 0;
     for (var item of option) {
-      if (item.voteDetailID == this.vote.voteDetailID) {
+      if (item.voteDetailId == this.vote.voteDetailID) {
         totalVote = totalVote + item.optionScore;
       }  
     }
-    console.log(totalVote);
     return totalVote;
   }
 }

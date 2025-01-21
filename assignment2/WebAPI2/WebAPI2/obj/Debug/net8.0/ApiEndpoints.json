@@ -1,0 +1,80 @@
+[
+  {
+    "ContainingType": "WebAPI2.Controllers.VotesController",
+    "Method": "GetAllOptions",
+    "RelativePath": "api/Votes/option",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI2.Controllers.VotesController",
+    "Method": "AddOptionDetail",
+    "RelativePath": "api/Votes/option",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "optionDetailViewModel",
+        "Type": "WebAPI2.ViewModels.OptionDetailViewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI2.Controllers.VotesController",
+    "Method": "UpdateOptionDetail",
+    "RelativePath": "api/Votes/updateOption",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voteDetailId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "optionName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "optionDetailViewModel",
+        "Type": "WebAPI2.ViewModels.OptionDetailViewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI2.Controllers.VotesController",
+    "Method": "GetAllVotes",
+    "RelativePath": "api/Votes/vote",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI2.Controllers.VotesController",
+    "Method": "AddVoteDetail",
+    "RelativePath": "api/Votes/vote",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voteDetailViewModel",
+        "Type": "WebAPI2.ViewModels.VoteDetailViewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

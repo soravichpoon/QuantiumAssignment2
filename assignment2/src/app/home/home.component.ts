@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
-import { NewOption, NewVote, OptionDetail } from '../vote-item/option-detail.component';
-
+import { OptionDetails } from '../shared/models/option.model';
+import { VoteDetails } from '../shared/models/vote.model';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +8,6 @@ import { NewOption, NewVote, OptionDetail } from '../vote-item/option-detail.com
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  @Input() voteTopicList : NewVote[] = [];
-  @Input() optionDetailList : OptionDetail[] = [];
-  @Output() updateScoreEvent = new EventEmitter<any>();
-
-  updateOption(vote: any) {
-    this.updateScoreEvent.emit({'optionScore': vote.optionScore, 'voteID': vote.voteID});
-  }
+  @Input() voteTopicList : VoteDetails[] = [];
+  @Input() optionDetailList : OptionDetails[] = [];
 }

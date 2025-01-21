@@ -3,18 +3,19 @@
 <dialog #dialog>
     <div>
         <b>Submit Vote</b><br><br>
-        Vote {{vote.topicName}}
+        Vote {{votes.topicName}}
         <span class="tab">
             <app-detail
-            [topic]="vote"
+                [topic]="votes"
             ></app-detail>
         </span><br><br>
-        <tr class="optionList" *ngFor="let item of option" >
-            <p *ngIf="vote.voteDetailID == item.voteDetailID;">
-                {{item.optionDetail}}
+        <!-- {{options | json}} -->
+        <tr class="optionList" *ngFor="let option of options" >
+            <p *ngIf="votes.voteDetailID == option.voteDetailId;">
+                {{option.optionName}}
                 <span class="tab2">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" (click)="chooseVote(item)" [ngModel]="item.optionIsVote">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" (click)="chooseVote(option)" [ngModel]="option.optionIsVote">
                     </div>
                 </span>
             </p>

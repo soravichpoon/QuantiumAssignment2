@@ -10,13 +10,12 @@
             </td><br>
             <td class="voteTable">
                 <app-vote
-                [vote]="vote"
-                [option]="optionDetailList"
-                (newVoteEvent)="updateOption($event)"
+                    [votes]="vote"
+                    [options]="optionDetailList"
                 ></app-vote>
                 <app-report
-                [vote]="vote"
-                [option]="optionDetailList"
+                    [vote]="vote"
+                    [option]="optionDetailList"
                 ></app-report>
             </td>
         </tr>

@@ -8,9 +8,8 @@
     <label class="ms-4">/Home</label>
   </div><br>
   <app-home
-  [voteTopicList]="votes"
-  [optionDetailList]="options"
-  (updateScoreEvent)="updateScore($event)"
+    [voteTopicList]="api2Service.votes"
+    [optionDetailList]="api2Service.options"
   ></app-home>
 </div><br>
 
@@ -19,6 +18,5 @@
     <label class="ms-4">/Create vote</label>
   </div><br>
   <app-create-vote
-  (addVoteEvent)="addVote($event)"
   ></app-create-vote>
 </ng-template>

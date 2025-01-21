@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { Api2Service } from '../shared/service/api2.service';
 
 @Component({
   selector: 'app-vote',
@@ -6,31 +7,32 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./vote.component.css']
 })
 export class VoteComponent {
-  @Input() vote : any;
-  @Input() option : any;
-  @Output() newVoteEvent = new EventEmitter<any>();
+  @Input() votes : any;
+  @Input() options : any;
   voteOption : any[] = [];
   voteID : number = 0;
+  api2Service : Api2Service = inject(Api2Service);
 
-  chooseVote(opt: any) {
+  chooseVote(opt: any): void {
     opt.optionIsVote = true;
-    for (var item of this.option) {
+    for (var item of this.options) {
       if (item != opt) {
         item.optionIsVote = false;
       }
     }
   }
 
-  submit() {
+  submit(): void {
     let indexx : number = 0;
     
-    for (let [i, item] of this.option.entries()) {
+    for (let [i, item] of this.options.entries()) {
       if (item.optionIsVote == true) {
         item.optionScore = item.optionScore + 1;
-        this.voteID = item.voteDetailID;
+        this.voteID = item.voteDetailId;
         indexx = i;
       }
     }
-    this.newVoteEvent.emit({'optionScore': this.option[indexx], 'voteID': this.voteID});
+  
+    this.api2Service.update_option(this.voteID, this.options[indexx].optionName, this.options[indexx]);
   }
 }
